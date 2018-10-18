@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDoApp-Angular</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app='ToDoApp' ng-controller='ToDoController'>
+		<form ng-submit='addToDoItem()'>
+			<input type="text" ng-model='toDoItem' autofocus="true">
+		</form>
+		<ul>
+			<li ng-repeat='toDo in toDoList | filter : {"value" : "", "status" : f} track by $index'><span ng-dblclick='complete($index)'>{{toDo.value}}</span><span>--Complete : {{toDo.status}}</span><span ng-click='remove($index)'>--Remove</span></li>
+		</ul>
+		<button ng-click='toggleFilter("")'>All</button>
+		<button ng-click='toggleFilter(false)'>Active</button>
+		<button ng-click='toggleFilter(true)'>Completed</button>
+	</div>
+	<script type="text/javascript" src="app/main.js"></script>
+</body>
+</html>
