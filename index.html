@@ -10,7 +10,7 @@
 			<input type="text" ng-model='toDoItem' autofocus="true">
 		</form>
 		<ul>
-			<li ng-repeat='toDo in toDoList | filter : {"value" : "", "status" : f} track by $index'><span ng-dblclick='complete($index)'>{{toDo.value}}</span><span>--Complete : {{toDo.status}}</span><span ng-click='remove($index)'>--Remove</span></li>
+			<li ng-repeat='toDo in toDoList | filter : {"value" : "", "status" : f} track by $index'><span ng-dblclick='complete(toDoList.indexOf(toDo))'>{{toDo.value}}</span><span>--Complete : {{toDo.status}}</span><span ng-click='remove(toDoList.indexOf(toDo))'>--Remove</span></li>
 		</ul>
 		<button ng-click='toggleFilter("")'>All</button>
 		<button ng-click='toggleFilter(false)'>Active</button>
