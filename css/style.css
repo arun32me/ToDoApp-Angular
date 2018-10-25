@@ -46,6 +46,7 @@ li {
     padding: 10px;
     padding-left: 43px;
     font-size: 18px;
+    overflow: hidden;
 }
 .success {
     background-color: rgb(220, 255, 220);
@@ -73,11 +74,11 @@ li {
 .closeBtn {
     position: absolute;
     right: 10px;
-    top: 5px;
+    top: 3px;
     display: inline-block;
     padding: 5px 10px;
-    /* background-color: gray; */
     cursor: pointer;
+    color: gray!important;
 }
 .check {
     position: absolute;

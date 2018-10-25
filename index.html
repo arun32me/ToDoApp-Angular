@@ -9,10 +9,10 @@
 	<div class="app" ng-app='ToDoApp' ng-controller='ToDoController'>
 		<a class="btn" style="position: fixed; right: 10px; top: 10px; width: 50px;" ng-click='toggleBg()'>BG</a>
 		<form ng-submit='addToDoItem()'>
-			<input type="text" ng-model='toDoItem' autofocus="true" placeholder="Write Here..." maxlength="42">
+			<input type="text" ng-model='toDoItem' autofocus="true" placeholder="Write Here..." maxlength="55">
 		</form>
 		<ul>
-			<li ng-repeat='toDo in toDoList | filter : {"value" : "", "status" : f} track by $index' ng-class='{success : toDo.status == true}'><div ng-click='complete(toDoList.indexOf(toDo))' class="check"><span ng-class="{checkMark : toDo.status == false}">&#10004;</span></div><span>{{toDo.value}}</span><span class="closeBtn" ng-click='remove(toDoList.indexOf(toDo))'>&#10062;</span></li>
+			<li ng-repeat='toDo in toDoList | filter : {"value" : "", "status" : f} track by $index' ng-class='{success : toDo.status == true}'><div ng-click='complete(toDoList.indexOf(toDo))' class="check"><span ng-class="{checkMark : toDo.status == false}">&#10004;</span></div><span>{{toDo.value}}</span><span class="closeBtn" ng-click='remove(toDoList.indexOf(toDo))'>&#10006;</span></li>
 		</ul>
 		<div class="menu">
 			<a class="btn" ng-class='{activeBtn : f == ""}' href="javascript:void(0)" ng-click='toggleFilter("")'>All</a>
