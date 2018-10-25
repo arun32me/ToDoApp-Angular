@@ -2,6 +2,7 @@ const app = angular.module('ToDoApp', []);
 
 app.controller('ToDoController', function($scope) {
 	$scope.f = '';
+	$scope.bg = true;
 	let save = function() {
 		localStorage.setItem('todoApp-angular', JSON.stringify($scope.toDoList));
 	}
@@ -32,5 +33,13 @@ app.controller('ToDoController', function($scope) {
 	}
 	$scope.toggleFilter = function(stat) {
 		$scope.f = stat;
+	}
+	$scope.toggleBg = function() {
+		$scope.bg = !$scope.bg;
+		if($scope.bg) {
+			document.body.className = 'bg';
+		} else {
+			document.body.className = '';
+		}
 	}
 });

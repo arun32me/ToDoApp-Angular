@@ -1,0 +1,10 @@
+var trackProduct = function(targetGid) {
+	var links = document.getElementsByClassName('buy-now');
+	console.log(links);
+    for(let i = 0; i < links.length; i++) {
+    let gid = links[i].getAttribute('data-stat-pid');
+        if(gid == targetGid) {
+            links[i].style.backgroundColor = 'black';
+        }
+    }
+}
