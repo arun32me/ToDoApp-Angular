@@ -2,6 +2,7 @@ const app = angular.module('ToDoApp', []);
 
 app.controller('ToDoController', function($scope) {
 	$scope.f = '';
+	$scope.toDoItem = '';
 	$scope.bg = true;
 	let save = function() {
 		localStorage.setItem('todoApp-angular', JSON.stringify($scope.toDoList));
@@ -17,6 +18,7 @@ app.controller('ToDoController', function($scope) {
 				value: $scope.toDoItem,
 				status: false
 			});
+			console.log($scope.toDoList);
 			$scope.toDoItem = '';
 			save();
 		} else {
